@@ -81,9 +81,9 @@ export default function Navbar({ items }: NavbarProps) {
         </NavItemList>
         {/* <LogoWrapper> */}
         <NextImage src="/mrcs_klang.jpeg" alt="redcrescentklang" width="160" height="80" objectFit="contain" />
-        {/* <Logo /> */}
-        {/* </LogoWrapper> */}
-        {/* <ColorSwitcherContainer>
+        {/* <Logo />
+        </LogoWrapper>
+        <ColorSwitcherContainer>
           <ColorSwitcher />
         </ColorSwitcherContainer> */}
         <HamburgerMenuWrapper>
