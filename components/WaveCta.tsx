@@ -63,6 +63,10 @@ const CtaWrapper = styled.div`
 const Title = styled(SectionTitle)`
   color: rgb(var(--textSecondary));
   margin-bottom: 4rem;
+
+  ${media('<=tablet')} {
+    font-size: 25px;
+  }
 `;
 
 const OutlinedButton = styled(Button)`

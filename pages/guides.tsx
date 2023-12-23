@@ -74,7 +74,7 @@ const FEATURES = [
 
 export default function Guides({ posts }: ScrollableBlogPostsProps) {
   return (
-    <Page title="Camper Guides" description="Here are all the necessary information to kickstart your Kem Belia preparation.">
+    <Page title="Campers Guides" description="Here are all the necessary information to kickstart your Kem Belia preparation.">
       <Wrapper>
         <SectionTitle>Individual Preparation</SectionTitle>
         <CustomAutofitGrid>

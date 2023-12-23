@@ -15,6 +15,8 @@ import OpenGraphHead from 'views/SingleArticlePage/OpenGraphHead';
 import ShareWidget from 'views/SingleArticlePage/ShareWidget';
 import StructuredDataHead from 'views/SingleArticlePage/StructuredDataHead';
 import { Posts, PostsDocument, Query } from '.tina/__generated__/types';
+import NextLink from 'next/link';
+import TextButton from 'components/TextButton';
 
 export default function SingleArticlePage(props: InferGetStaticPropsType<typeof getStaticProps>) {
   const contentRef = useRef<HTMLDivElement | null>(null);
@@ -70,6 +72,13 @@ export default function SingleArticlePage(props: InferGetStaticPropsType<typeof 
       <StructuredDataHead slug={slug} {...meta} />
       <MetadataHead {...meta} />
       <CustomContainer id="content" ref={contentRef}>
+        <NextLink href="/blog" passHref>
+          <TextButton transparent>
+            <BackButton>
+              <span> &lt;</span> Back
+            </BackButton>
+          </TextButton>
+        </NextLink>
         {/* <ShareWidget title={title} slug={slug} /> */}
         <Header title={title} formattedDate={formattedDate} imageUrl={absoluteImageUrl} readTime={readTime} />
         <MDXRichText content={content} />
@@ -147,9 +156,18 @@ export async function getStaticProps({ params }: GetStaticPropsContext<{ slug: s
 const CustomContainer = styled(Container)`
   position: relative;
   max-width: 90rem;
-  margin: 10rem auto;
+  margin: 2rem auto;
 
   ${media('<=tablet')} {
     margin: 5rem auto;
+  }
+`;
+
+const BackButton = styled.text`
+  font-size: 1.6rem;
+  font-weight: 500;
+
+  &:hover {
+    background: rgb(var(--primaryDark));
   }
 `;

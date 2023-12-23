@@ -38,7 +38,7 @@ export default function Hero() {
         <Heading>Kem Belia Ke-42 2024</Heading>
         <NextLink href="/guides" passHref>
           <Button>
-            View Camper Guides <span>&rarr;</span>
+            View Campers Guides <span>&rarr;</span>
           </Button>
         </NextLink>
         {/* <Description>Youth On The Move</Description> */}

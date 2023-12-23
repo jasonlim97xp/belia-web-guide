@@ -104,6 +104,10 @@ const HeroContainer = styled.div`
 const Wrapper = styled.div`
   margin-top: 10rem;
   padding: 0 10rem;
+
+  ${media('<=tablet')} {
+    padding: 0 1rem;
+  }
 `;
 
 const WhiteBackgroundContainer = styled.div`

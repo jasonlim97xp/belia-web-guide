@@ -21,7 +21,7 @@ import { NavItems } from 'types';
 
 const navItems: NavItems = [
   { title: 'Home', href: '/' },
-  { title: 'About Us', href: '/' },
+  // { title: 'About Us', href: '/' },
   { title: 'Guides', href: '/guides', outlined: true },
 ];
 
