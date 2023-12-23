@@ -70,7 +70,7 @@ export default function SingleArticlePage(props: InferGetStaticPropsType<typeof 
       <StructuredDataHead slug={slug} {...meta} />
       <MetadataHead {...meta} />
       <CustomContainer id="content" ref={contentRef}>
-        <ShareWidget title={title} slug={slug} />
+        {/* <ShareWidget title={title} slug={slug} /> */}
         <Header title={title} formattedDate={formattedDate} imageUrl={absoluteImageUrl} readTime={readTime} />
         <MDXRichText content={content} />
       </CustomContainer>

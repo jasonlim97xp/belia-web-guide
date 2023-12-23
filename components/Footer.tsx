@@ -50,13 +50,13 @@ export default function Footer() {
   return (
     <FooterWrapper>
       <Container>
-        <ListContainer>
+        {/* <ListContainer>
           {footerItems.map((singleItem) => (
             <FooterList key={singleItem.title} {...singleItem} />
           ))}
-        </ListContainer>
+        </ListContainer> */}
         <BottomBar>
-          <ShareBar>
+          {/* <ShareBar>
             <NextLink href="https://www.twitter.com/my-saas-startup" passHref>
               <a>
                 <TwitterIcon size={50} round={true} />
@@ -74,8 +74,8 @@ export default function Footer() {
                 <LinkedinIcon size={50} round={true} />
               </a>
             </NextLink>
-          </ShareBar>
-          <Copyright>&copy; Copyright 2021 My Saas Startup</Copyright>
+          </ShareBar> */}
+          <Copyright>&copy; Copyright 2023 Kem Belia 42</Copyright>
         </BottomBar>
       </Container>
     </FooterWrapper>
@@ -104,10 +104,19 @@ function ListItem({ title, href }: SingleFooterListItem) {
 }
 
 const FooterWrapper = styled.div`
-  padding-top: 10rem;
-  padding-bottom: 4rem;
   background: rgb(var(--secondary));
   color: rgb(var(--textSecondary));
+`;
+
+const BottomBar = styled.div`
+  display: flex;
+  padding-bottom: 5rem;
+  justify-content: center;
+  align-items: center;
+
+  ${media('<=tablet')} {
+    flex-direction: column;
+  }
 `;
 
 const ListContainer = styled.div`
@@ -162,15 +171,4 @@ const ShareBar = styled.div`
 const Copyright = styled.p`
   font-size: 1.5rem;
   margin-top: 0.5rem;
-`;
-
-const BottomBar = styled.div`
-  margin-top: 6rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  ${media('<=tablet')} {
-    flex-direction: column;
-  }
 `;

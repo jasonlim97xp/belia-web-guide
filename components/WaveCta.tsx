@@ -6,12 +6,18 @@ import Container from 'components/Container';
 import SectionTitle from 'components/SectionTitle';
 import { useNewsletterModalContext } from 'contexts/newsletter-modal.context';
 import { media } from 'utils/media';
+import { useState, useEffect } from 'react';
 
 export default function WaveCta() {
   const { setIsModalOpened } = useNewsletterModalContext();
+  const [currentUrl, setCurrentUrl] = useState<string | null>(null);
+
+  useEffect(() => {
+    setCurrentUrl(window.location.host);
+  }, []);
 
   return (
-    <>
+    <WaveContainer>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
         <path
           fill="#0A121E"
@@ -21,22 +27,28 @@ export default function WaveCta() {
       </svg>
       <CtaWrapper>
         <Container>
-          <Title>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus delectus?</Title>
+          <Title>
+            Interested to be a part of the camp?
+            <br /> Want to sponsor our camp?
+          </Title>
           <CustomButtonGroup>
             <Button onClick={() => setIsModalOpened(true)}>
-              Subscribe to the newsletter <span>&rarr;</span>
+              Contact Us <span>&rarr;</span>
             </Button>
-            <NextLink href="/features" passHref>
-              <OutlinedButton transparent>
-                Features <span>&rarr;</span>
-              </OutlinedButton>
-            </NextLink>
+
+            <OutlinedButton transparent onClick={() => window.open(`${currentUrl}/files/sponsorship_kit.pdf`, '_blank')}>
+              Our Proposal<span>&rarr;</span>
+            </OutlinedButton>
           </CustomButtonGroup>
         </Container>
       </CtaWrapper>
-    </>
+    </WaveContainer>
   );
 }
+
+const WaveContainer = styled.div`
+  background: rgb(var(--secondBackground));
+`;
 
 const CtaWrapper = styled.div`
   background: rgb(var(--secondary));

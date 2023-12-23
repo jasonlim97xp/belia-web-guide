@@ -10,28 +10,28 @@ import { media } from 'utils/media';
 
 const TABS = [
   {
-    title: 'Find relevant media contacts - multiline title',
+    title: 'Learn First Aid Skills',
     description:
-      '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quidem ipsam ratione dicta quis cupiditate consequuntur laborum ducimus iusto velit.</p>',
-    imageUrl: '/demo-illustration-3.png',
+      '<p>Gain practical knowledge and hands-on experience in delivering life-saving first aid. Learn to confidently assess and respond to emergencies, acquiring skills that make a significant difference in saving lives.</p>',
+    imageUrl: '/feature_1.jpeg',
     baseColor: '249,82,120',
     secondColor: '221,9,57',
   },
   {
-    title: 'Another amazing feature',
+    title: 'Make New Friends',
     description:
-      '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quidem ipsam ratione dicta quis cupiditate consequuntur laborum ducimus iusto velit.</p>',
-    imageUrl: '/demo-illustration-4.png',
-    baseColor: '57,148,224',
-    secondColor: '99,172,232',
+      '<p>Our camp fosters multiracial friendships. Embrace diversity, engage in teamwork, and participate in cultural exchange to forge meaningful connections. Expand your social circle, broaden horizons, and create lasting friendships beyond camp.</p>',
+    imageUrl: '/feature_2.jpeg',
+    baseColor: '249,82,120',
+    secondColor: '221,9,57',
   },
   {
-    title: 'And yet... another truly fascinating feature',
+    title: 'Gain New Experiences',
     description:
-      '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quidem ipsam ratione dicta quis cupiditate consequuntur laborum ducimus iusto velit.</p>',
-    imageUrl: '/demo-illustration-5.png',
-    baseColor: '88,193,132',
-    secondColor: '124,207,158',
+      '<p>Gain invaluable experiences through hands-on learning, role-playing, and engaging with experts. Develop problem-solving abilities and apply first aid techniques effectively. Make a real difference through community engagement. Take your first aid capabilities to new heights.</p>',
+    imageUrl: '/feature_3.jpeg',
+    baseColor: '249,82,120',
+    secondColor: '221,9,57',
   },
 ];
 
@@ -76,8 +76,8 @@ export default function FeaturesGallery() {
   return (
     <FeaturesGalleryWrapper>
       <Content>
-        <OverTitle>features</OverTitle>
-        <SectionTitle>What are you signing in for?</SectionTitle>
+        <OverTitle>why you should join the camp</OverTitle>
+        <SectionTitle>Reasons to Join Kem Belia</SectionTitle>
       </Content>
       <GalleryWrapper>
         <TabsContainer>{tabsMarkup}</TabsContainer>

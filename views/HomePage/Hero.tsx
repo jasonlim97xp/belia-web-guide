@@ -1,3 +1,4 @@
+import NextImage from 'next/image';
 import NextLink from 'next/link';
 import styled from 'styled-components';
 import Button from 'components/Button';
@@ -13,7 +14,7 @@ export default function Hero() {
 
   return (
     <HeroWrapper>
-      <Contents>
+      {/* <Contents>
         <CustomOverTitle>the coolest, saas product you have ever seen</CustomOverTitle>
         <Heading>Make your life easier with our SaaS</Heading>
         <Description>
@@ -30,17 +31,30 @@ export default function Hero() {
             </Button>
           </NextLink>
         </CustomButtonGroup>
+      </Contents> */}
+      {/* <ImageContainer> */}
+      <NextImage src="/kb42_logo.png" alt="kembelia42" width={400} height={400} objectFit="contain" />
+      <Contents>
+        <Heading>Kem Belia Ke-42 2024</Heading>
+        <NextLink href="/guides" passHref>
+          <Button>
+            View Camper Guides <span>&rarr;</span>
+          </Button>
+        </NextLink>
+        {/* <Description>Youth On The Move</Description> */}
       </Contents>
-      <ImageContainer>
-        <HeroIllustration />
-      </ImageContainer>
+      {/* <HeroIllustration /> */}
+      {/* </ImageContainer> */}
     </HeroWrapper>
   );
 }
 
 const HeroWrapper = styled(Container)`
   display: flex;
+  flex-direction: column;
   padding-top: 5rem;
+  justify-content: center;
+  align-items: center;
 
   ${media('<=desktop')} {
     padding-top: 1rem;
@@ -51,7 +65,10 @@ const HeroWrapper = styled(Container)`
 
 const Contents = styled.div`
   flex: 1;
+  justify-content: center;
+  text-align: center;
   max-width: 60rem;
+  margin-bottom: 10rem;
 
   ${media('<=desktop')} {
     max-width: 100%;
@@ -65,19 +82,12 @@ const CustomButtonGroup = styled(ButtonGroup)`
 const ImageContainer = styled.div`
   display: flex;
   flex: 1;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: flex-start;
-
-  svg {
-    max-width: 45rem;
-  }
 
   ${media('<=desktop')} {
     margin-top: 2rem;
     justify-content: center;
-    svg {
-      max-width: 80%;
-    }
   }
 `;
 
@@ -85,6 +95,7 @@ const Description = styled.p`
   font-size: 1.8rem;
   opacity: 0.8;
   line-height: 1.6;
+  color: rgb(var(--textSecondary));
 
   ${media('<=desktop')} {
     font-size: 1.5rem;
@@ -96,12 +107,13 @@ const CustomOverTitle = styled(OverTitle)`
 `;
 
 const Heading = styled.h1`
-  font-size: 7.2rem;
+  font-size: 6.2rem;
   font-weight: bold;
   line-height: 1.1;
   margin-bottom: 4rem;
   letter-spacing: -0.03em;
 
+  color: rgb(var(--textSecondary));
   ${media('<=tablet')} {
     font-size: 4.6rem;
     margin-bottom: 2rem;

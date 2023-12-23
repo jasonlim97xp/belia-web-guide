@@ -3,6 +3,11 @@ import Head from 'next/head';
 import styled from 'styled-components';
 import BasicSection from 'components/BasicSection';
 import Link from 'components/Link';
+import AutofitGrid from 'components/AutofitGrid';
+import SectionTitle from 'components/SectionTitle';
+import YoutubeVideo from 'components/YoutubeVideo';
+import { media } from 'utils/media';
+
 import { EnvVars } from 'env';
 import { getAllPosts } from 'utils/postsFetcher';
 import Cta from 'views/HomePage/Cta';
@@ -25,18 +30,32 @@ export default function Homepage({ posts }: InferGetStaticPropsType<typeof getSt
       </Head>
       <HomepageWrapper>
         <WhiteBackgroundContainer>
-          <Hero />
-          <Partners />
-          <BasicSection imageUrl="/demo-illustration-1.svg" title="Lorem ipsum dolor sit amet consectetur." overTitle="sit amet gogo">
+          <HeroContainer>
+            <Hero />
+          </HeroContainer>
+
+          <BasicSection
+            imageUrl="/campsite.jpeg"
+            overTitle="Here are some of the key information that you should know"
+            title="Important Info"
+          >
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, quidem error incidunt a doloremque voluptatem porro inventore
-              voluptate quo deleniti animi laboriosam.{' '}
-              <Link href="/help-center">Possimus ullam velit rem itaque consectetur, in distinctio?</Link> Lorem ipsum, dolor sit amet
-              consectetur adipisicing elit. Soluta repellendus quia quos obcaecati nihil. Laudantium non accusantium, voluptate eum nesciunt
-              at suscipit quis est soluta?
+              <b>Date: </b>27, 28, 29, 30 January 2023
             </p>
+            <p>
+              <b>Location: </b> Kampung Idaman, Taman Botani Negara Shah Alam
+            </p>
+            <p>
+              <b>Target Participants: </b>120 Secondary BSMM Klang Members
+            </p>
+
+            {/* <p>
+              Here are some of the main <Link href="/help-center">Possimus ullam velit rem itaque consectetur, in distinctio?</Link> Lorem
+              ipsum, dolor sit amet consectetur adipisicing elit. Soluta repellendus quia quos obcaecati nihil. Laudantium non accusantium,
+              voluptate eum nesciunt at suscipit quis est soluta?
+            </p> */}
           </BasicSection>
-          <BasicSection imageUrl="/demo-illustration-2.svg" title="Lorem ipsum dolor sit." overTitle="lorem ipsum" reversed>
+          {/* <BasicSection imageUrl="/demo-illustration-2.svg" title="Lorem ipsum dolor sit." overTitle="lorem ipsum" reversed>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, quidem error incidunt a doloremque voluptatem porro inventore{' '}
               <strong>voluptate quo deleniti animi laboriosam</strong>. Possimus ullam velit rem itaque consectetur, in distinctio?
@@ -46,25 +65,25 @@ export default function Homepage({ posts }: InferGetStaticPropsType<typeof getSt
               <li>Professional remark 2</li>
               <li>Professional feature 3</li>
             </ul>
-          </BasicSection>
-        </WhiteBackgroundContainer>
-        <DarkerBackgroundContainer>
-          <Cta />
+          </BasicSection> */}
+          <Wrapper>
+            <YoutubeVideo url="https://www.youtube.com/watch?v=UjT7SS02Jgg&ab_channel=TuttiFratelli" />
+          </Wrapper>
           <FeaturesGallery />
-          <Features />
-          <Testimonials />
-          <ScrollableBlogPosts posts={posts} />
-        </DarkerBackgroundContainer>
+          <Partners />
+        </WhiteBackgroundContainer>
+        {/* <DarkerBackgroundContainer> */}
+        {/* <Cta /> */}
+        {/* <Features /> */}
+        {/* <Testimonials /> */}
+        {/* <ScrollableBlogPosts posts={posts} /> */}
+        {/* </DarkerBackgroundContainer> */}
       </HomepageWrapper>
     </>
   );
 }
 
-const HomepageWrapper = styled.div`
-  & > :last-child {
-    margin-bottom: 15rem;
-  }
-`;
+const HomepageWrapper = styled.div``;
 
 const DarkerBackgroundContainer = styled.div`
   background: rgb(var(--background));
@@ -74,15 +93,28 @@ const DarkerBackgroundContainer = styled.div`
   }
 `;
 
+const HeroContainer = styled.div`
+  background-image: url('kb_hero.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  background-position: center;
+`;
+
+const Wrapper = styled.div`
+  margin-top: 10rem;
+  padding: 0 10rem;
+`;
+
 const WhiteBackgroundContainer = styled.div`
   background: rgb(var(--secondBackground));
 
   & > :last-child {
-    padding-bottom: 15rem;
+    padding-bottom: 3rem;
   }
 
   & > *:not(:first-child) {
-    margin-top: 15rem;
+    margin-top: 10rem;
   }
 `;
 

@@ -1,3 +1,4 @@
+import NextImage from 'next/image';
 import dynamic from 'next/dynamic';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
@@ -69,7 +70,8 @@ export default function Navbar({ items }: NavbarProps) {
       <Content>
         <NextLink href="/" passHref>
           <LogoWrapper>
-            <Logo />
+            <NextImage src="/kb42_logo.png" alt="kembelia42" width="160" height="80" objectFit="contain" />
+            {/* <Logo /> */}
           </LogoWrapper>
         </NextLink>
         <NavItemList>
@@ -77,9 +79,13 @@ export default function Navbar({ items }: NavbarProps) {
             <NavItem key={singleItem.href} {...singleItem} />
           ))}
         </NavItemList>
-        <ColorSwitcherContainer>
+        {/* <LogoWrapper> */}
+        <NextImage src="/mrcs_klang.jpeg" alt="redcrescentklang" width="160" height="80" objectFit="contain" />
+        {/* <Logo /> */}
+        {/* </LogoWrapper> */}
+        {/* <ColorSwitcherContainer>
           <ColorSwitcher />
-        </ColorSwitcherContainer>
+        </ColorSwitcherContainer> */}
         <HamburgerMenuWrapper>
           <HamburgerIcon aria-label="Toggle menu" onClick={toggle} />
         </HamburgerMenuWrapper>
@@ -95,9 +101,9 @@ function NavItem({ href, title, outlined }: SingleNavItem) {
     setIsModalOpened(true);
   }
 
-  if (outlined) {
-    return <CustomButton onClick={showNewsletterModal}>{title}</CustomButton>;
-  }
+  // if (outlined) {
+  //   return <CustomButton onClick={showNewsletterModal}>{title}</CustomButton>;
+  // }
 
   return (
     <NavItemWrapper outlined={outlined}>
@@ -113,9 +119,18 @@ const CustomButton = styled(Button)`
   line-height: 1.8;
 `;
 
+const LogoWrapper = styled.div`
+  display: flex;
+  margin-right: auto;
+  text-decoration: none;
+
+  color: rgb(var(--logoColor));
+`;
+
 const NavItemList = styled.div`
   display: flex;
   list-style: none;
+  margin-right: 2rem;
 
   ${media('<desktop')} {
     display: none;
@@ -126,14 +141,6 @@ const HamburgerMenuWrapper = styled.div`
   ${media('>=desktop')} {
     display: none;
   }
-`;
-
-const LogoWrapper = styled.a`
-  display: flex;
-  margin-right: auto;
-  text-decoration: none;
-
-  color: rgb(var(--logoColor));
 `;
 
 const NavItemWrapper = styled.li<Partial<SingleNavItem>>`
