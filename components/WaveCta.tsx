@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from 'react';
 import NextLink from 'next/link';
 import styled from 'styled-components';
 import Button from 'components/Button';
@@ -6,7 +7,6 @@ import Container from 'components/Container';
 import SectionTitle from 'components/SectionTitle';
 import { useNewsletterModalContext } from 'contexts/newsletter-modal.context';
 import { media } from 'utils/media';
-import { useState, useEffect } from 'react';
 
 export default function WaveCta() {
   const { setIsModalOpened } = useNewsletterModalContext();
